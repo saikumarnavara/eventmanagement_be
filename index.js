@@ -1,24 +1,18 @@
-// import express from "express";
 const express = require("express");
 const dontEnv = require("dotenv");
-const mongoose = require("mongoose");
 const bodyparser = require("body-parser");
 const UserRoutes = require("./src/routes/UserRoutes");
+const dashboardRoutes = require("./src/routes/protected_routes/dashboardRoutes");
+const DbConnection = require("./src/config/DB");
 
 dontEnv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(bodyparser.json());
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("connected to mongodb");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+DbConnection();
 
-app.use("/users", UserRoutes);
+app.use("/user", UserRoutes);
+app.use("/", dashboardRoutes);
 
 app.listen(port, () => {
   console.log(`server running on port ${port}`);

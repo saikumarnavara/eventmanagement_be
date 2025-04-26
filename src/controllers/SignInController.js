@@ -12,7 +12,7 @@ const SignInController = async (req, res) => {
       let isMatched = await bcrypt.compare(password, data.password);
       if (isMatched) {
         const token = jwt.sign({ phone: phone }, SECERT_KEY, {
-          expiresIn: "2m",
+          expiresIn: "30m",
         });
         res.status(200).json({
           message: "Login Successfull",
