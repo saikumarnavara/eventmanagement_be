@@ -1,0 +1,8 @@
+1) Carousel Route :-
+  -GET =  http://localhost:8080/app/get-carousel-data
+2)-POST = http://localhost:8080/app/upload-carousel-data
+   payload :- {
+    "imgURL" : "string"
+   }
+3)-DELETE = http://localhost:80a80/app/delete-carousel-data/ID
+
