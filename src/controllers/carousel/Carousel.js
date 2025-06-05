@@ -38,6 +38,10 @@ const GetCarouselDataController = async (req, res) => {
 const DeleteCarouselDataController = async (req, res) => {
   try {
     const { id } = req.params;
+    const deleted = await carouselSchema.findByIdAndDelete(id);
+    if (!deleted) {
+      return res.status(404).json({ message: "Carousel data not found" });
+    }
     await carouselSchema.findByIdAndDelete(id);
     res.status(200).json({
       message: "Carousel data deleted successfully",

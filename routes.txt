@@ -1,8 +1,167 @@
-1) Carousel Route :-
-  -GET =  http://localhost:8080/app/get-carousel-data
-2)-POST = http://localhost:8080/app/upload-carousel-data
-   payload :- {
-    "imgURL" : "string"
+======================
+🎠 CAROUSEL ROUTES
+======================
+
+1) GET ALL CAROUSELS
+--------------------
+URL     : http://localhost:8080/app/get-carousel-data
+Method  : GET
+Payload : None
+Success : 200 OK
+
+------------------------------------------------------------
+
+2) CREATE A CAROUSEL ITEM
+-------------------------
+URL     : http://localhost:8080/app/upload-carousel-data
+Method  : POST
+Payload :
+{
+  "imgURL": "https://example.com/image.jpg"
+}
+Success : 201 Created
+
+------------------------------------------------------------
+
+3) DELETE A CAROUSEL ITEM
+-------------------------
+URL     : http://localhost:8080/app/delete-carousel-data/:id
+Method  : DELETE
+Example : http://localhost:8080/app/delete-carousel-data/665f8d2a1f3c0b6e4a7c1234
+Success : 200 OK
+
+
+======================
+⭐ REVIEW ROUTES
+======================
+
+1) GET ALL REVIEWS
+------------------
+URL     : http://localhost:8080/app/get-reviews-data
+Method  : GET
+Payload : None
+Success : 200 OK
+
+------------------------------------------------------------
+
+2) CREATE A REVIEW
+------------------
+URL     : http://localhost:8080/app/upload-reviews-data
+Method  : POST
+Payload :
+{
+  "name": "John Doe",
+  "review": "Excellent service and support!",
+  "rating": 5
+}
+Success : 201 Created
+
+------------------------------------------------------------
+
+3) DELETE A REVIEW
+------------------
+URL     : http://localhost:8080/app/delete-reviews-data/:id
+Method  : DELETE
+Example : http://localhost:8080/app/delete-reviews-data/665f8d2a1f3c0b6e4a7c5678
+Success : 200 OK
+
+
+======================
+💍 TESTIMONIAL ROUTES
+======================
+
+1) GET ALL TESTIMONIALS
+-----------------------
+URL     : http://localhost:8080/app/get-testimonial-data
+Method  : GET
+Payload : None
+Success : 200 OK
+
+------------------------------------------------------------
+
+2) CREATE A TESTIMONIAL
+-----------------------
+URL     : http://localhost:8080/app/upload-testimonial-data
+Method  : POST
+Payload :
+{
+  "groomName": "Raj",
+  "brideName": "Priya",
+  "description": "Beautiful wedding, great memories!",
+  "imageURL": "https://example.com/image.jpg",
+  "videoURL": "https://example.com/video.mp4",
+  "rating": 5
+}
+Success : 201 Created
+
+------------------------------------------------------------
+
+3) DELETE A TESTIMONIAL
+-----------------------
+URL     : http://localhost:8080/app/delete-testimonial-data/:id
+Method  : DELETE
+Example : http://localhost:8080/app/delete-testimonial-data/665f8d2a1f3c0b6e4a7c9876
+Success : 200 OK
+
+
+======================
+Events Routes:
+======================
+
+1) GET all Events
+   URL    : http://localhost:8080/app/get-events-data
+   Method : GET
+   Desc   : Fetches all event records
+
+2) POST Create Event
+   URL    : http://localhost:8080/app/upload-events-data
+   Method : POST
+   Desc   : Creates a new event
+   Payload (application/json):
+   {
+     "category": "Wedding",
+     "title": "Beachside Wedding",
+     "description": "Luxury beach wedding package",
+     "location": "Goa",
+     "price": 50000,
+     "service": "Catering, Photography",
+     "thumbnail": "https://example.com/thumb.jpg",
+     "banner": "https://example.com/banner.jpg",
+     "videoURL": "https://example.com/video.mp4",
+     "gallery": ["https://example.com/img1.jpg", "https://example.com/img2.jpg"],
+     "reviews": ["Amazing", "Beautiful arrangements"],
+     "date": "2025-08-20T18:30:00.000Z"
    }
-3)-DELETE = http://localhost:80a80/app/delete-carousel-data/ID
+
+3) DELETE Event
+   URL    : http://localhost:8080/app/delete-events-data/:id
+   Method : DELETE
+   Desc   : Deletes an event by ID
+
+4) GET Filters
+   URL    : http://localhost:8080/app/get-events-filter-data
+   Method : GET
+   Desc   : Fetch distinct categories, locations, and price range
+
+5) GET Events by Category
+   URL    : http://localhost:8080/app/get-events-by-category/:category
+   Method : GET
+   Desc   : Fetch events based on category
+
+
+=======================
+Contact Us API Payloads and Routes
+==========================
+
+1) GET - Fetch all contacted users:
+   Endpoint: http://localhost:8080/app/get-contacted-users
+
+2) POST - Submit a contact request:
+   Endpoint: http://localhost:8080/app/contact-admin
+   Payload:
+   {
+     "name": "John Doe",
+     "phone": "9876543210",
+     "message": "I would like to know more about your services."
+   }
 
