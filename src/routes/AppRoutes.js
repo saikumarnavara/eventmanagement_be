@@ -6,6 +6,7 @@ const ReviewController = require("../controllers/reviews/ReviewController");
 const TestimonialController = require("../controllers/testmonials/TestmonialController");
 const EventsController = require("../controllers/events/EventsController");
 const ContactUsController = require("../controllers/contactus/ContactusController");
+const OurTeamController = require("../controllers/ourteam/OurTeamController");
 
 {
   /* Carousel Routes*/
@@ -60,5 +61,18 @@ router.get(
 
 router.get("/get-contacted-users", ContactUsController.getContactedUsers);
 router.post("/contact-admin", ContactUsController.createContactUs);
+
+// ourteam routes
+router.get("/get-our-team", OurTeamController.getOurTeamData);
+router.post(
+  "/create-team-member",
+  AuthenticateToken,
+  OurTeamController.createTeamMember
+);
+router.delete(
+  "/delete-team-member/:id",
+  AuthenticateToken,
+  OurTeamController.deleteTeamMember
+);
 
 module.exports = router;

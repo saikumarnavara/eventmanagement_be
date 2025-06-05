@@ -135,3 +135,33 @@
   ]
 }
 ```
+
+# Our Team API Documentation
+
+## 1. Get All Team Members
+
+**Endpoint**: `GET /app/get-our-team`
+
+**Description**: Fetch all team member data.
+
+**Response**
+
+```json
+{
+  "success": true,
+  "message": "Team members fetched successfully",
+  "data": [
+    {
+      "_id": "664f0558c56e284b2b741d82",
+      "name": "John Doe",
+      "position": "Lead Designer",
+      "image": "https://example.com/image.jpg",
+      "description": "Expert in UI/UX with 10+ years of experience.",
+      "social": "https://linkedin.com/in/johndoe",
+      "joinedDate": "2023-04-10",
+      "createdAt": "...",
+      "updatedAt": "..."
+    }
+  ]
+}
+```

@@ -165,3 +165,60 @@ Contact Us API Payloads and Routes
      "message": "I would like to know more about your services."
    }
 
+
+
+Our Team API Endpoints
+=======================
+
+1. Get All Team Members
+-----------------------
+METHOD: GET
+URL: http://localhost:8080/app/get-our-team
+
+Response:
+{
+  "success": true,
+  "message": "Team members fetched successfully",
+  "data": [ ... ]
+}
+
+
+2. Create Team Member
+---------------------
+METHOD: POST
+URL: http://localhost:8080/app/create-team-member
+
+Payload:
+{
+  "name": "John Doe",
+  "position": "Lead Designer",
+  "image": "https://example.com/image.jpg",
+  "description": "Expert in UI/UX with 10+ years of experience.",
+  "social": "https://linkedin.com/in/johndoe",
+  "joinedDate": "2023-04-10"
+}
+
+Response:
+{
+  "success": true,
+  "message": "Team member created successfully",
+  "data": { ... }
+}
+
+
+3. Delete Team Member
+---------------------
+METHOD: DELETE
+URL: http://localhost:8080/app/delete-team-member/:id
+
+Example:
+http://localhost:8080/app/delete-team-member/664f0558c56e284b2b741d82
+
+Response:
+{
+  "success": true,
+  "message": "Team member deleted successfully",
+  "data": { ... }
+}
+
+
